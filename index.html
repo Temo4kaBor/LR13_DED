@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Мотиватор — локально</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" class="app">
+    <!-- Background image + gradient -->
+    <div class="bg-layer">
+      <img src="https://images.unsplash.com/photo-1629977681408-e6e6876645c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb3VudGFpbiUyMGxhbmRzY2FwZSUyMHN1bnJpc2V8ZW58MXx8fHwxNzU3MzM4NDEyfDA&ixlib=rb-4.1.0&q=80&w=1600" alt="bg">
+      <div class="bg-gradient"></div>
+    </div>
+
+    <!-- Particles -->
+    <div id="particles" class="particles"></div>
+
+    <!-- Main -->
+    <main class="container">
+      <header class="header">
+        <h1>Мотиватор</h1>
+        <p class="subtitle">Ваш помощник для достижения целей и развития полезных привычек</p>
+      </header>
+
+      <nav class="nav">
+        <button class="tab-btn active" data-tab="quotes">Цитаты</button>
+        <button class="tab-btn" data-tab="goals">Цели</button>
+        <button class="tab-btn" data-tab="habits">Привычки</button>
+        <button class="tab-btn" data-tab="gratitude">Благодарности</button>
+        <button class="tab-btn" data-tab="achievements">Достижения</button>
+      </nav>
+
+      <section class="content">
+
+        <!-- QUOTES -->
+        <section class="tab-panel" id="quotes" data-tabpanel>
+          <div class="category-row" id="categoryRow"></div>
+
+          <div class="quotes-area">
+            <div id="quoteCard" class="quote-card">
+              <div id="quoteText" class="quote-text"></div>
+              <div id="quoteAuthor" class="quote-author"></div>
+            </div>
+
+            <div class="controls">
+              <button id="randomBtn" class="glass-btn">Новая цитата</button>
+              <div id="loading" class="loader hidden"></div>
+            </div>
+
+            <div class="stats">
+              <div class="stat">
+                <div id="totalQuotes" class="stat-number">0</div>
+                <div class="stat-label">Цитат</div>
+              </div>
+              <div class="stat">
+                <div id="totalCats" class="stat-number">0</div>
+                <div class="stat-label">Категории</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">∞</div>
+                <div class="stat-label">Мотивации</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- GOALS -->
+        <section class="tab-panel hidden" id="goals" data-tabpanel>
+          <div class="panel-header">
+            <h2>Трекер целей</h2>
+            <div class="goal-form">
+              <input id="goalInput" placeholder="Добавить цель..." />
+              <button id="addGoalBtn" class="glass-btn">Добавить</button>
+            </div>
+          </div>
+          <ul id="goalsList" class="goals-list"></ul>
+        </section>
+
+        <!-- HABITS -->
+        <section class="tab-panel hidden" id="habits" data-tabpanel>
+          <div class="panel-header">
+            <h2>Календарь привычек</h2>
+            <div class="habit-form">
+              <input id="habitInput" placeholder="Добавить привычку..." />
+              <button id="addHabitBtn" class="glass-btn">Добавить</button>
+            </div>
+          </div>
+          <div id="habitsContainer" class="habits-container"></div>
+        </section>
+
+        <!-- GRATITUDE -->
+        <section class="tab-panel hidden" id="gratitude" data-tabpanel>
+          <div class="panel-header">
+            <h2>Дневник благодарности</h2>
+            <div class="gratitude-form">
+              <input id="gratInput" placeholder="За что сегодня благодарен?" />
+              <button id="addGratBtn" class="glass-btn">Добавить</button>
+            </div>
+          </div>
+          <ul id="gratList" class="grat-list"></ul>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section class="tab-panel hidden" id="achievements" data-tabpanel>
+          <h2>Достижения</h2>
+          <div id="achievementsContainer" class="achievements-container"></div>
+        </section>
+
+      </section>
+
+    </main>
+
+    <footer class="footer">Открой этот файл локально — всё работает без установки</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
